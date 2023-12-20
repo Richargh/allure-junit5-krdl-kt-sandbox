@@ -3,14 +3,14 @@ package de.richargh.sandbox.allure.ingredients
 class Pot(val ingredients: List<Ingredient>) {
     fun cook(): Food {
 
-        val critiques = mutableListOf<Critique>()
+        val critiques = mutableListOf<RoughCritique>()
         if(ingredients.contains(Spice.Pepper) && ingredients.size == 1){
-            critiques += Critique.TooMuchPepper
+            critiques += RoughCritique.TooMuchPepper
         }
         if(ingredients.contains(Spice.Salt) && ingredients.size == 1){
-            critiques += Critique.TooMuchSalt
+            critiques += RoughCritique.TooMuchSalt
         }
 
-        return Food(critiques)
+        return UndefinedFood(critiques)
     }
 }

@@ -1,18 +1,12 @@
 plugins {
-    kotlin("jvm") version "1.9.21"
+    kotlin("jvm")
     id("io.qameta.allure") version "2.11.2"
 }
-
-tasks.withType(Wrapper::class) {
-    gradleVersion = "8.5"
-}
-
-group = "com.example.junit5"
-version = "1.0-SNAPSHOT"
 
 val allureVersion = "2.25.0"
 val aspectJVersion = "1.9.21"
 val kotlinVersion = "1.9.21"
+val assertjVersion = "3.24.2"
 
 kotlin {
     jvmToolchain(17)
@@ -33,7 +27,10 @@ tasks.test {
 
 dependencies {
     agent("org.aspectj:aspectjweaver:$aspectJVersion")
-    
+
+    implementation(project(":commons"))
+    implementation(project(":ingredients"))
+
     testImplementation(platform("org.jetbrains.kotlin:kotlin-bom:$kotlinVersion"))
     testImplementation("org.jetbrains.kotlin:kotlin-stdlib")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
@@ -43,6 +40,8 @@ dependencies {
 
     testImplementation(platform("org.junit:junit-bom:5.10.1"))
     testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testImplementation("org.junit.jupiter:junit-jupiter-params")
+    testImplementation("org.assertj:assertj-core:$assertjVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 
     testImplementation("org.slf4j:slf4j-simple:2.0.9")
