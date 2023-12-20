@@ -26,8 +26,6 @@ tasks.test {
 
 dependencies {
     agent("org.aspectj:aspectjweaver:$aspectJVersion")
-
-    implementation(project(":commons"))
     
     testImplementation(platform("org.jetbrains.kotlin:kotlin-bom:$kotlinVersion"))
     testImplementation("org.jetbrains.kotlin:kotlin-stdlib")

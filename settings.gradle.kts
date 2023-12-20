@@ -5,4 +5,4 @@ plugins {
 }
 
 include(
-        ":menu", ":ingredients")
+        ":menu", ":ingredients", ":commons")
