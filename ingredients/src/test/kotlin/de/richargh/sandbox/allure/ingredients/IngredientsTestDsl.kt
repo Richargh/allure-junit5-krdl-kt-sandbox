@@ -7,8 +7,8 @@ class IngredientsTestDsl {
 
     private val ingredients = mutableListOf<Ingredient>()
 
-    fun addSpice(spice: Spice){
-        step("Adding Spice: ${spice.name}")
+    fun addSpice(spice: Spice, gram: Int){
+        step("Adding ${gram}g of ${spice.name}")
         ingredients += spice
     }
 
