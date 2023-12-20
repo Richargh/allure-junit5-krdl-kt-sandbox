@@ -5,6 +5,7 @@ import io.qameta.allure.Allure.*
 import io.qameta.allure.SeverityLevel.*
 import io.qameta.allure.util.ResultsUtils.PARENT_SUITE_LABEL_NAME
 import io.qameta.allure.util.ResultsUtils.SUB_SUITE_LABEL_NAME
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
 import kotlin.test.assertEquals
@@ -25,7 +26,7 @@ class PotTest: UnitTest() {
         // when
         val result = dsl.testPot().cook()
         // then
-        assertEquals(listOf(Critique.TooMuchPepper), result.critiques)
+        assertThat(result.critiques).containsExactly(Critique.TooMuchPepper)
     }
 
     @Epic("Salt")
@@ -43,7 +44,7 @@ class PotTest: UnitTest() {
         // when
         val result = dsl.testPot().cook()
         // then
-        assertEquals(listOf(Critique.TooMuchSalt), result.critiques)
+        assertThat(result.critiques).containsExactly(Critique.TooMuchSalt)
     }
 
 }

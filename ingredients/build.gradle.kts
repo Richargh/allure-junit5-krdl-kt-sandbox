@@ -6,6 +6,7 @@ plugins {
 val allureVersion = "2.25.0"
 val aspectJVersion = "1.9.21"
 val kotlinVersion = "1.9.21"
+val assertjVersion = "3.24.2"
 
 kotlin {
     jvmToolchain(17)
@@ -39,6 +40,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.1"))
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testImplementation("org.junit.jupiter:junit-jupiter-params")
+    testImplementation("org.assertj:assertj-core:$assertjVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 
     testImplementation("org.slf4j:slf4j-simple:2.0.9")
