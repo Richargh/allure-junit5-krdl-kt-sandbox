@@ -1,0 +1,23 @@
+= Allure + JUnit5 (Sandbox)
+
+== Features
+
+* link:https://allurereport.org/docs/junit5/[Allure JUnit5]
+* link:https://github.com/allure-framework/allure-gradle[Allure Gradle Plugin]
+* Allure test reports per module and Aggregated over all modules
+* JUnit 5
+
+== Preconditions
+
+* Install the java version from link:.sdkmanrc[] via link:https://sdkman.io/[SdkMan] by calling `sdk env`
+
+== Usage
+
+* Generate allure report for each module: `./gradlew allureReport --depends-on-tests --clean`, results are f.ex. in link:ingredients/build/reports/allure-report/allureReport/index.html[]
+* Generate aggregated report for all modules: `./gradlew allureAggregateReport --depends-on-tests --clean`, results are f.ex. in link:build/reports/allure-report/allureAggregateReport/index.html[]
+
+== Acknowledgements
+
+Helpful links to get this working were:
+
+* Official Allure link:https://github.com/allure-examples/junit5-kotlin-gradlekts[ junit5-kotlin-gradlekts]
